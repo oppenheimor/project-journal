@@ -1,0 +1,15 @@
+services:
+  nextjs:
+    image: ghcr.io/oppenheimor/project-journey-nextjs:latest
+    container_name: project-journey-nextjs
+    restart: always
+    networks:
+      - app-network
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=production
+
+networks:
+  app-network:
+    external: true
